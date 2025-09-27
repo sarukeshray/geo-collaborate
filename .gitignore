@@ -1,0 +1,50 @@
+# Python / Backend specific
+# -------------------------
+
+# Virtual environment
+/backend/venv/
+
+# Django/FastAPI specific
+/backend/geocollaborate.db
+/backend/db.sqlite3
+
+# Uploaded media
+/backend/uploads/
+
+# AI Model file
+/backend/yolov8n.pt
+
+# Python cache
+/backend/__pycache__/
+*.pyc
+
+
+# Node / Frontend specific
+# ------------------------
+
+# Dependencies
+/frontend/node_modules/
+
+# Build directory
+/frontend/build/
+
+# Log files
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Local environment variables
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+
+# General / Editor specific
+# ---------------------------
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
