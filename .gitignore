@@ -48,3 +48,7 @@
 
 # MacOS
 .DS_Store
+
+# AI Model file
+/backend/yolov8n.pt
+/backend/best.pt
