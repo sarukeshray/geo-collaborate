@@ -1,0 +1,34 @@
+/* frontend/src/components/Dashboard.css */
+.dashboard-container {
+  background-color: #20232a;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #282c34;
+  padding: 25px;
+  border-radius: 8px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+  margin: 0;
+  color: #61dafb;
+  font-size: 1.2em;
+}
+
+.stat-card p {
+  margin: 10px 0 0;
+  font-size: 2.5em;
+  font-weight: bold;
+}

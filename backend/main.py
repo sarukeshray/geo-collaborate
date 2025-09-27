@@ -73,6 +73,14 @@ def create_new_report(
         image_filename=unique_filename,
         analysis=analysis_result
     )
+# Add this code block in backend/main.py (e.g., after the create_new_report function)
+
+@app.get("/reports/stats", response_model=schemas.Stats)
+def read_reports_stats(db: Session = Depends(get_db)):
+    """
+    Endpoint to get aggregated statistics about all reports.
+    """
+    return crud.get_reports_stats(db=db)
 
 @app.get("/reports/", response_model=List[schemas.Report])
 def read_reports(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):

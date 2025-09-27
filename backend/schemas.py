@@ -25,3 +25,9 @@ class Report(ReportBase):
     class Config:
         # This allows Pydantic to work with ORM models
         from_attributes = True
+
+# Add this to the end of backend/schemas.py
+
+class Stats(BaseModel):
+    total_reports: int
+    total_potholes_detected: int

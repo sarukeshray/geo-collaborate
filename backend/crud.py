@@ -1,6 +1,7 @@
 # backend/crud.py
 
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 import models
 import schemas
 
@@ -25,3 +26,15 @@ def create_report(db: Session, report: schemas.ReportCreate, image_filename: str
     db.commit()
     db.refresh(db_report)
     return db_report
+
+def get_reports_stats(db: Session):
+    """
+    Calculates statistics from the reports in the database.
+    """
+    total_reports = db.query(models.Report).count()
+    total_potholes = db.query(func.sum(models.Report.pothole_count)).scalar() or 0
+
+    # You could expand this to count by status, etc.
+    # For now, these two stats are great for a dashboard.
+
+    return {"total_reports": total_reports, "total_potholes_detected": total_potholes}
