@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
 
-function Dashboard() {
+// Accept a new function prop: onStatCardClick
+function Dashboard({ onStatCardClick }) {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -30,16 +31,16 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h2>Live Platform Statistics</h2>
       <div className="stats-grid">
-        <div className="stat-card">
+        {/* Make the stat card a button and call the prop on click */}
+        <button className="stat-card" onClick={onStatCardClick}>
           <h3>Total Reports</h3>
           <p>{stats.total_reports}</p>
-        </div>
-        <div className="stat-card">
+        </button>
+        <button className="stat-card" onClick={onStatCardClick}>
           <h3>Total Potholes Detected (AI)</h3>
           <p>{stats.total_potholes_detected}</p>
-        </div>
+        </button>
       </div>
     </div>
   );

@@ -1,35 +1,31 @@
 // frontend/src/components/Heatmap.js
 import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
-import 'leaflet.heat'; // Import the vanilla JS library
+import 'leaflet.heat';
 import L from 'leaflet';
 
 function Heatmap({ points }) {
-  const map = useMap(); // This hook gives us the map instance
+  const map = useMap();
 
   useEffect(() => {
-    if (!map || points.length === 0) {
-        return; // Don't do anything if map is not ready or there are no points
-    }
+    if (!map || points.length === 0) return;
 
-    // Create the heat layer with our points and some configuration
     const heatLayer = L.heatLayer(points, {
       radius: 25,
       blur: 15,
       maxZoom: 18,
+      // --- THIS IS THE NEW LINE ---
+      gradient: { 0.4: 'orange', 0.8: 'red', 1.0: '#800000' } // Orange to dark red gradient
     });
 
-    // Add the layer to the map
     heatLayer.addTo(map);
 
-    // This is a cleanup function that React will run when the component is removed
-    // This is crucial to prevent old heatmaps from staying on the map
     return () => {
       map.removeLayer(heatLayer);
     };
-  }, [map, points]); // This effect will re-run if the map or points change
+  }, [map, points]);
 
-  return null; // This component doesn't render any visible HTML itself
+  return null;
 }
 
 export default Heatmap;

@@ -30,3 +30,14 @@
   font-weight: 700;
   color: var(--primary-color);
 }
+/* Add this to frontend/src/components/Dashboard.css */
+.stat-card {
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}

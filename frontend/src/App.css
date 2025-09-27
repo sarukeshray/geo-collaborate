@@ -67,3 +67,22 @@
   color: white;
   border-color: var(--primary-color);
 }
+/* Add this to the end of frontend/src/App.css */
+.pothole-marker.highlight {
+  animation: pulse 1s 2; /* Pulse for 2 seconds */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
