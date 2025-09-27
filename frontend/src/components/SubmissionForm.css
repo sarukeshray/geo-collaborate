@@ -1,40 +1,19 @@
 /* frontend/src/components/SubmissionForm.css */
-.form-container {
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-top: 1px solid #ddd;
-  text-align: center;
-}
-
-.form-container input[type="file"] {
-  margin-bottom: 10px;
-}
-
-.form-container button {
-  padding: 10px 20px;
-  font-size: 1em;
+.new-report-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: 600;
   cursor: pointer;
-  background-color: #61dafb;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
   border: none;
-  border-radius: 5px;
-  color: #282c34;
-  font-weight: bold;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-.form-container button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.message {
-  margin-top: 15px;
-  font-size: 1em;
-}
-
-.message.success {
-  color: green;
-}
-
-.message.error {
-  color: red;
+.new-report-button:hover {
+    transform: translateY(-2px);
 }

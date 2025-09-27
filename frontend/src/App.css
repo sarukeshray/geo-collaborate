@@ -1,22 +1,69 @@
 /* frontend/src/App.css */
 .app-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 380px 1fr; /* Sidebar width and the rest for the map */
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  padding: 25px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: var(--text-light);
 }
 
 .map-container {
-  flex-grow: 1; /* This makes the map fill the remaining space */
   height: 100%;
   width: 100%;
+}
+
+.view-toggle {
+  text-align: center;
+  margin-top: auto; /* Pushes to the bottom */
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.view-toggle button {
+  padding: 10px 20px;
+  margin: 0 8px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-toggle button:hover {
+  background-color: #f0f0f0;
+}
+
+.view-toggle button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
 }

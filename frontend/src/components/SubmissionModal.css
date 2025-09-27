@@ -1,0 +1,64 @@
+/* frontend/src/components/SubmissionModal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.modal-content input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  border: 2px dashed var(--border-color);
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.modal-content button {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  margin: 0 10px;
+}
+
+.modal-content button.cancel {
+    background-color: #ccc;
+}
+
+.modal-content button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 15px; font-size: 1em;
+}
+.message.success { color: green; }
+.message.error { color: red; }
