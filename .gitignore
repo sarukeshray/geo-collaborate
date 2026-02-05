@@ -11,8 +11,7 @@
 # Uploaded media
 /backend/uploads/
 
-# AI Model file
-/backend/yolov8n.pt
+
 
 # Python cache
 /backend/__pycache__/

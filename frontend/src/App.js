@@ -55,7 +55,7 @@ function App() {
       <SubmissionModal show={isModalOpen} onClose={() => setIsModalOpen(false)} onNewReport={fetchReports} />
       <div className="app-container">
         <div className="sidebar">
-          <div className="header"><h1>GeoCollaborate</h1><p>Urban Infrastructure Monitor</p></div>
+          <div className="header"><h1>Roadflow AI</h1><p>Urban Infrastructure Monitor</p></div>
           <button className="new-report-button" onClick={() => setIsModalOpen(true)}>+ Submit New Report</button>
           {/* Pass the handler function to the Dashboard */}
           <Dashboard onStatCardClick={handleStatCardClick} />
